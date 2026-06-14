@@ -2,4 +2,4 @@ services:
   core:
     build:
       context: .
-      dockerfile: ./container/Dockerfile
+      dockerfile: ./container/app.Dockerfile
