@@ -1,6 +1,3 @@
-#include <string>
-#include <vector>
-#include <iostream>
 #include "utils.h"
 #include "ledger.h"
 
@@ -9,10 +6,7 @@ void Ledger::showRecentEntries(){
             std::cout<<"\n";
             for (std::string header:headers){
                 int remainingSpace = getRemainingSpaceForRenderingColumn(header,columnWidth);
-                std::cout<<header;
-                for (int i=0;i<remainingSpace;i++){
-                    std::cout<<" ";
-                }
+                std::cout<<header<<std::string(remainingSpace,' ');
             }
             std::cout<<"\n";
 
