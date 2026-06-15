@@ -4,11 +4,12 @@
 void Ledger::showRecentEntries(){
             int columnWidth=20;
             std::cout<<"\n";
+            std::string row;
             for (std::string header:headers){
                 int remainingSpace = getRemainingSpaceForRenderingColumn(header,columnWidth);
-                std::cout<<header<<std::string(remainingSpace,' ');
+                row += header+std::string(remainingSpace,' ');
             }
-            std::cout<<"\n";
+            std::cout<<row<<"\n";
 
         }
 void Ledger::addEntry(Entry entry){
