@@ -1,6 +1,6 @@
 FROM gcc:12.5
 
-RUN apt update -y && apt install cmake -y
+RUN apt update -y && apt install cmake libpq-dev -y
 
 COPY ../src /usr/src/app
 WORKDIR /usr/src/app
