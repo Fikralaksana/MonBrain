@@ -2,6 +2,7 @@
 #include <ctime>
 #include <string>
 #include "Ledger/ledger.h"
+#include "Database/base.h"
 
 /*
 This is main executable.
@@ -9,11 +10,9 @@ This is main executable.
 */ 
 
 
-int main()
-{
-
-
-    std::cout << "Hello World";
+int main(){
+    std::cout << "Starting Monbrain";
+    connectToDB();
     Ledger ledger=Ledger();
     ledger.showRecentEntries();
 

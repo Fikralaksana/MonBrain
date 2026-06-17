@@ -12,4 +12,4 @@ add_subdirectory(Ledger)
 add_executable(monbrain main.cpp)
 
 # Link library into the final compile
-target_link_libraries(monbrain PRIVATE Ledger Database)
+target_link_libraries(monbrain PRIVATE Ledger Database pqxx)
