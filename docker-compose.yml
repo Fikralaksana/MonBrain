@@ -3,3 +3,9 @@ services:
     build:
       context: .
       dockerfile: ./container/app.Dockerfile
+    volumes:
+      - ./src:/usr/src/app
+  db:
+    image: postgres:18.4
+    environment:
+      POSTGRES_PASSWORD: password

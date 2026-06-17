@@ -1,5 +1,5 @@
 {
-    "cmake.sourceDirectory": "/Users/fikra/Documents/MonBrain/src",
+    "cmake.sourceDirectory": "/workspaces/MonBrain/src",
     "conventionalCommits.scopes": [
         "Ledger"
     ]
