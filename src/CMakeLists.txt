@@ -1,15 +1,15 @@
 cmake_minimum_required(VERSION 3.23)
 project(monbrain)
 
-# 1. Daftarkan libpqxx terlebih dahulu (biarkan CMake internal libpqxx membaca jalurnya sendiri)
+# 3rd party depedencies
 add_subdirectory(Dependencies/libpqxx-7.10.7 build-pqxx)
 
-# 2. Daftarkan modul internal proyek Anda
+# Internal module
 add_subdirectory(Database)
 add_subdirectory(Ledger)
 
-# 3. Buat executable utama
+# Executable entry point
 add_executable(monbrain main.cpp)
 
-# 4. Link semua dependency ke target utama
+# Link library into the final compile
 target_link_libraries(monbrain PRIVATE Ledger Database)
