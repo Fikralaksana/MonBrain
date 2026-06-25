@@ -43,17 +43,12 @@ int main(int argc, char* argv[]){
         return errorCode;
     }
 
-
-    switch (mode)
-    {
-    case RUN_MODE_ENUM::MIGRATE:
+    if (mode == RUN_MODE_ENUM::MIGRATE) {
         appMigration(connection);
-        break;
-    case RUN_MODE_ENUM::SERVE:
+    } else if(mode == RUN_MODE_ENUM::SERVE){
         std::cout<<"Server Runs\n";
-        break;
-    default:
-        break;
+    } else {
+        return 1;
     }
 
     return 0;
