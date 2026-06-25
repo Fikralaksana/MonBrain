@@ -58,5 +58,5 @@ void migrate(pqxx::connection& connection,BaseMigration& migration, bool rollbac
     pqxx::work tx(connection);
     pqxx::result result = tx.exec(sql);
     tx.commit();
-    std::cout << "Migrate successfully run";
+    std::cout << "Migrate successfully run\n";
 }
