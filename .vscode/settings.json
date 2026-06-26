@@ -2,5 +2,7 @@
     "cmake.sourceDirectory": "/workspaces/MonBrain/src",
     "conventionalCommits.scopes": [
         "Ledger"
-    ]
+    ],
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.css-language-features"
 }
