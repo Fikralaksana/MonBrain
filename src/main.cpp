@@ -3,6 +3,7 @@
 #include <string>
 #include "Database/base.h"
 #include "migration.hpp"
+#include "CLI/cli.hpp"
 
 // Available menu
 enum RUN_MODE_ENUM
@@ -63,7 +64,9 @@ int main(int argc, char *argv[])
     }
     else if (mode == RUN_MODE_ENUM::SERVE)
     {
-        std::cout << "Server Runs\n";
+        std::cout << "CLI session in started\n";
+        CLIApp cli = CLIApp();
+        cli.initCLI();
     }
     else if (mode == RUN_MODE_ENUM::LEDGER)
     {
