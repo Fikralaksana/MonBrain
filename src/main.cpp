@@ -10,14 +10,14 @@ enum RUN_MODE_ENUM
 {
     MIGRATE,
     LEDGER,
-    SERVE,
+    SHELL,
 };
 
 RUN_MODE_ENUM getRunMode(std::string textMOde)
 {
     std::map<std::string, RUN_MODE_ENUM> const RUN_MODE = {
         {"migrate", RUN_MODE_ENUM::MIGRATE},
-        {"serve", RUN_MODE_ENUM::SERVE},
+        {"shell", RUN_MODE_ENUM::SHELL},
         {"ledger", RUN_MODE_ENUM::LEDGER},
     };
     auto mode = RUN_MODE.find(textMOde);
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
     {
         appMigration(connection);
     }
-    else if (mode == RUN_MODE_ENUM::SERVE)
+    else if (mode == RUN_MODE_ENUM::SHELL)
     {
         std::cout << "CLI session in started\n";
         CLIApp cli = CLIApp();
