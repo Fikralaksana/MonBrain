@@ -1,6 +1,8 @@
 #include "cli.hpp"
 #include <readline/readline.h>
 #include <iostream>
+#include <vector>
+#include "utils.h"
 
 const std::string EXIT_SIGNAL = "exit";
 
@@ -30,7 +32,17 @@ void CLIApp::initCLI()
     isRunning = true;
     while (isRunning)
     {
-        char *line = readline("$$$: ");
+        std::string cursor = "$$$: ";
+        if (err.size() > 0)
+        {
+            cursor = err + "\n" + cursor;
+        }
+        else if (out.size() > 0)
+        {
+            cursor = out + "\n" + cursor;
+        }
+        char *line = readline(cursor.c_str());
+        err = "";
         if (line == nullptr)
         {
             continue;
@@ -40,7 +52,7 @@ void CLIApp::initCLI()
         {
             break;
         }
-        // handle input
+        inputHandler(std::string(line));
     }
     isRunning = false;
 }
@@ -67,4 +79,14 @@ bool CLIApp::checkClose(std::string input)
         return true;
     }
     return false;
+}
+
+void CLIApp::inputHandler(std::string input)
+{
+    std::vector<std::string> args = splitText(input);
+    int size = args.size();
+    if (size < 1)
+    {
+        err = "Too few argument";
+    }
 }
