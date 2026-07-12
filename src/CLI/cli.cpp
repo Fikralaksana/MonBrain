@@ -81,12 +81,24 @@ bool CLIApp::checkClose(std::string input)
     return false;
 }
 
+/**
+ * @brief A handler to process user input
+ *
+ * @param input User input.
+ *
+ * TODO: details to be filled when the whole function is done
+ * @details
+ *  1.
+ *
+ * @code
+ * inputHandler("add hello");
+ */
 void CLIApp::inputHandler(std::string input)
 {
     std::vector<std::string> args = splitText(input);
-    int size = args.size();
-    if (size < 1)
+    validator.validate(args, err, out);
+    if (!(err == ""))
     {
-        err = "Too few argument";
+        return;
     }
 }

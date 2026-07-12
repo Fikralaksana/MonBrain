@@ -1,4 +1,5 @@
 #include <string>
+#include "validator.hpp"
 
 class CLIApp
 {
@@ -7,6 +8,7 @@ public:
     bool isRunning = false;
     std::string err;
     std::string out;
+    CLIValidator validator = CLIValidator();
 
 private:
     bool checkClose(std::string input);

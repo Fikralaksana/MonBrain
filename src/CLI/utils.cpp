@@ -1,9 +1,10 @@
 #include "utils.h"
+#include <iostream>
 
 /**
  * @brief Split a string separated by space into a vector.
  *
- * @param string Text input to be splited.
+ * @param text Text input to be splited.
  *
  * @return std::vector<std::string> A list of string represented as a vector.
  *
@@ -16,6 +17,12 @@
  *
  * @code
  * std::vector<std::string>  v = splitText("Hello World"); // return {"Hello","World"}
+ *
+ * TODO:
+ * 1. Text is copied from caller, can used alias/reference.
+ * 2. Word is creating new object everytime there is a changes.
+ *    Use text.substr to cut text and directly push to vector
+ * 3.
  */
 std::vector<std::string> splitText(std::string text)
 {
