@@ -4,14 +4,14 @@
 /**
  * @brief Split a string separated by space into a vector.
  *
- * @param text Text input to be splited.
+ * @param text Text input to be splitted.
  *
  * @return std::vector<std::string> A list of string represented as a vector.
  *
  * @details
  *  1. Loop into each character
  *  2. If character is space, push a string in word variable into vector.
- *  3. If character is last character, add the caracter into word variable, push word into args, then cleanup word.
+ *  3. If character is last character, add the character into word variable, push word into args, then cleanup word.
  *  4. Else, add character into a word.
  *  5. Add index on every loop.
  *
