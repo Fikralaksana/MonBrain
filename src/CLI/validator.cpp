@@ -69,7 +69,7 @@ bool CLIValidator::minArgumentIsValid()
 bool CLIValidator::commandIsRecognized()
 {
     std::string command = args[0];
-    if (!(RECOGNIZED_COMMAND.contains(command)))
+    if (!(recognizedCommand.contains(command)))
     {
         return false;
     }

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include "utils.h"
+#include "commands.hpp"
 
 const std::string EXIT_SIGNAL = "exit";
 
@@ -100,5 +101,13 @@ void CLIApp::inputHandler(std::string input)
     if (!(err == ""))
     {
         return;
+    }
+    std::string command = args[0];
+
+    // Route handler
+    // Add
+    if (COMMAND_MAPS[command] == COMMAND::ADD)
+    {
+        // handler function
     }
 }
