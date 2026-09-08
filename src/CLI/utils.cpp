@@ -49,6 +49,5 @@ std::vector<std::string> splitText(std::string text)
         }
         index++;
     }
-
     return args;
 }

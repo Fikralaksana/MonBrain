@@ -43,13 +43,13 @@ int main(int argc, char *argv[])
     pqxx::connection connection = connectToDB();
     RUN_MODE_ENUM mode;
 
-    // Validate that app called by an argumen
+    // Validate that app called by an argument
     if (argc < 1)
     {
         return 1;
     }
 
-    // Validate that app called with correct 1st argumen
+    // Validate that app called with correct 1st argument
     try
     {
         mode = getRunMode(std::string(argv[1]));

@@ -4,6 +4,7 @@
 #include <vector>
 #include "utils.h"
 #include "commands.hpp"
+#include "handlers.hpp"
 
 const std::string EXIT_SIGNAL = "exit";
 
@@ -97,6 +98,7 @@ bool CLIApp::checkClose(std::string input)
 void CLIApp::inputHandler(std::string input)
 {
     std::vector<std::string> args = splitText(input);
+    CLIHandlers handler = CLIHandlers();
     validator.validate(args, err, out);
     if (!(err == ""))
     {
@@ -108,6 +110,6 @@ void CLIApp::inputHandler(std::string input)
     // Add
     if (COMMAND_MAPS[command] == COMMAND::ADD)
     {
-        // handler function
+        int isError = handler.add(args);
     }
 }
