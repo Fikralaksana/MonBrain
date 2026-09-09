@@ -21,16 +21,15 @@ int CLIHandlers::add(std::vector<std::string> &args)
     std::string &object = args[1];
     if (RECOGNIZED_OBJECT.contains(object))
     {
-        Entry entry1;
-        entry1.accountID = args[2];
-        entry1.credit = std::stod(args[4]);
-        entry1.debit = std::stod(args[5]);
-        entry1.description = args[6];
-        entry1.groupId = args[7];
-        entry1.ID = args[8];
+        Transaction transaction;
+        transaction.ID = args[2];
+        transaction.sourceAccount = args[3];
+        transaction.destinationAccount = args[4];
+        transaction.amount = std::stod(args[5]);
+        transaction.description = args[6];
         auto now = std::chrono::system_clock::now();
-        entry1.timestamp = std::chrono::system_clock::to_time_t(now);
-        ledger.addEntry(entry1);
+        transaction.timestamp = std::chrono::system_clock::to_time_t(now);
+        ledger.addEntry(transaction);
 
         return 0;
     }
