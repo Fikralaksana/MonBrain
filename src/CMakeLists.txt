@@ -7,6 +7,7 @@ project(monbrain)
 include(FindPkgConfig)
 pkg_check_modules(PQXX REQUIRED libpqxx)
 pkg_check_modules(READLINE REQUIRED readline)
+pkg_check_modules(UUID REQUIRED uuid)
 
 # Internal module
 add_subdirectory(Database)

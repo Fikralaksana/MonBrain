@@ -6,7 +6,7 @@
 #include "CLI/cli.hpp"
 
 // Available menu
-enum RUN_MODE_ENUM
+enum class RUN_MODE_ENUM
 {
     MIGRATE,
     LEDGER,
