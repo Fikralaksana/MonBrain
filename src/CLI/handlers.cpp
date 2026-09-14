@@ -32,10 +32,10 @@ int CLIHandlers::add(std::vector<std::string> &args)
         uuid_generate(ID);
         uuid_unparse(ID, IDChar);
         transaction.ID = std::string(IDChar);
-        transaction.sourceAccount = args[3];
-        transaction.destinationAccount = args[4];
-        transaction.amount = std::stod(args[5]);
-        transaction.description = args[6];
+        transaction.sourceAccount = args[2];
+        transaction.destinationAccount = args[3];
+        transaction.amount = std::stod(args[4]);
+        transaction.description = args[5];
         auto now = std::chrono::system_clock::now();
         transaction.timestamp = std::chrono::system_clock::to_time_t(now);
         ledger.addEntry(transaction);

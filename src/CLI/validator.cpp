@@ -30,7 +30,7 @@ void CLIValidator::validate(std::vector<std::string> args, std::string &err, std
         return;
     }
 
-    if (!isLedgerTemplate)
+    if (!isLedgerTemplate())
     {
         err = "Payload is in correct";
         return;
@@ -107,15 +107,8 @@ bool CLIValidator::commandIsRecognized()
  */
 bool CLIValidator::isLedgerTemplate()
 {
-    if (!(args.size() != 6))
-    {
-        return false;
-    }
-    if (!(typeid(args[2]) != typeid(std::string)))
-    {
-        return false;
-    }
-    if (!(typeid(args[3]) != typeid(std::string)))
+    std::cout << "amount " << args[4];
+    if (args.size() != 6)
     {
         return false;
     }
@@ -124,15 +117,7 @@ bool CLIValidator::isLedgerTemplate()
         std::string amountString = args[4];
         std::stod(amountString);
     }
-    catch (std::exception &)
-    {
-        return false;
-    }
-    if (!(typeid(args[4]) != typeid(double)))
-    {
-        return false;
-    }
-    if (!(typeid(args[5]) != typeid(std::string)))
+    catch (std::invalid_argument)
     {
         return false;
     }
